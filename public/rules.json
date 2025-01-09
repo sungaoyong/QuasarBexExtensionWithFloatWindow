@@ -1,0 +1,14 @@
+[{
+  "id": 1,
+  "priority": 1,
+  "action": {
+    "type": "redirect",
+    "redirect": {
+      "url": "chrome-extension://nnfejkafaiheopldmfpeianooeofkaoh/www/InjectNdbgDetail.js"
+    }
+  },
+  "condition": {
+    "urlFilter": "https://121.36.155.251/rcbg-server/static/js/ndbg/ndbgDetail.js",
+    "resourceTypes": ["script"]
+  }
+}]

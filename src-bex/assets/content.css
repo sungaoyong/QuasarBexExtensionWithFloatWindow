@@ -1,0 +1,55 @@
+/* Global CSS used within your BEX. This is not preprocessed so this has to be pure CSS. */
+.btnClose {
+  /* 自定义配置 */
+  --btn-size: 20px; /* 按钮的宽高 */
+  --btn-x-size: 4px; /* X号线条粗细 */
+  --color: #333; /* 颜色 */
+  /* 配置 END */
+
+  position: relative;
+  width: var(--btn-size);
+  height: var(--btn-size);
+
+  /* X线条旋转后会有偏移，使用 flex 进行居中对齐修正 */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 绘制X线条 */
+.btnClose::after,
+.btnClose::before {
+  content: '';
+  position: absolute;
+  width: var(--btn-x-size);
+  height: var(--btn-size);
+  background-color: var(--color);
+  border-radius: calc(var(--btn-x-size) / 2);
+}
+/* 两条线条各向左右分别旋转 45 度*/
+.btnClose::after {
+  transform: rotate(45deg);
+}
+.btnClose::before {
+  transform: rotate(-45deg);
+}
+
+#draggable-window-quasar {
+  overflow: hidden;
+  resize: both;
+  border: 1px solid gray;
+  background-color: white;
+  z-index: 100003;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.resize-handle {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+
+  background-image: repeating - linear -
+    gradient(45deg, transparent, transparent 3px, #ccc 3px, #ccc 6px);
+}
