@@ -12,6 +12,9 @@
 A Quasar Bex Extension With a FloatWindow
 
 ## Install the dependencies
+```bash
+ pnpm install
+```
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
 
